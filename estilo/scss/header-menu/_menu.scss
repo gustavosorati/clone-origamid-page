@@ -1,0 +1,330 @@
+
+.header-navegacao {
+    background-color: #0E1013;
+}
+
+.container-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+// logo origamid
+.logo {
+    p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2.5rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: #fff;
+        padding: 10px;
+    }
+
+    span:first-child {
+        color: #AA88FF;
+        transition: .4s;
+        position: relative;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    .logo-eff {
+        margin-left: -16px;
+    }
+}
+
+// botão quer ativa o menu mobile
+.btn-menu-mobile {
+    display: none;
+    border-top: 3px solid #AA88FF;
+    top: 20px;
+    right: 1rem;
+    width: 36px;
+    cursor: pointer;
+    position: absolute;
+
+    @include responsive(759) {
+        display: block;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #AA88FF;
+        transition: .3s;
+        margin-top: 7px;
+    }
+
+    &.active {
+        border-top-color: #0d0e0f;
+        transition: .3s;
+
+        &:before {
+            transform: rotate(135deg);
+        }
+
+        &:after {
+            transform: rotate(45deg);
+            margin-top: -3px;
+        }
+    }
+}
+
+// menu principal
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    margin: 0 10px;
+    position: relative;
+    
+    @include responsive(759){
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background-color: #0E1013;
+        margin: 0;
+        width: 260px;
+        border-radius: 4px;
+        box-shadow: 0 2px 0 0px rgba(0,0,0,.3);
+        z-index: 500;
+        padding-bottom: 10px;
+    }
+
+    &.ativo {
+        @include responsive(759){
+            display: block;
+            animation: dropdown-slice .5s forwards;
+        }
+    }
+
+    li {
+        padding: 15px 0;
+        margin: 0 5px 0 0;
+
+        @include responsive(759){
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            display: block;
+            padding: 10px 15px;
+            color: #fff;
+            font-family: 'Rubik', sans-serif;
+            font-size: 1.125rem;
+            transition: .4s;
+    
+            &:hover {
+                color: #AA88FF;
+            }
+    
+            &.active {
+                background-color: #282A2D;
+                padding: 10px 20px;
+                border-radius: 4px;
+    
+                &.active:hover {
+                    background-color: #AA88FF;
+                    color: #fff;
+                }
+            }
+
+            @include responsive(759){
+                padding: 10px;
+                margin: 5px 20px;
+                border-top: 2px solid #1B1D20;
+            }
+        }
+    }
+}
+
+// configuração > cursos
+.cursos {
+    &:after {
+        content: "▼";
+        font-size: 0.625rem;
+        margin-left: 10px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.cursos.ativo:after {
+    content: "▲";
+    animation: menu-dropDown .3s forwards;
+}
+
+// submenu
+.submenu-item {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    background: #282A2D;
+    border-radius: 4px;
+    min-width: 260px;
+    position: absolute;
+    top: 70px;
+    left: -90px;
+    box-shadow: 0px 4px 16px 4px rgba(0,0,0,.3);
+    padding: 0.9375rem;
+    animation: dropdown-slice .3s forwards;
+    transition: .3s;
+    z-index: 300;
+
+    &.ativo {
+        display: block;
+        transition: .3s;
+
+        @include responsive(759){
+            position: relative;
+            top: 0;
+            left: auto;
+            overflow: initial;
+            height: auto;
+            padding: 15px;
+            pointer-events: initial;
+            margin: 0 !important;
+        }
+    }
+
+    &:before {
+        content: "";
+        display: flex;
+        left: 130px;
+        top: -10px;
+        position: absolute;
+        border-radius: 4px;
+        
+        height: 30px;
+        width: 30px;
+        background-color: #282A2D;
+
+        transform: rotate(45deg);
+
+        @include responsive(759){
+            display: none;
+        }
+    }
+
+    &:last-child {
+        @include responsive(759){
+            margin-bottom: 5px !important;
+        }
+    }
+
+    li {
+        padding: 0;
+
+        a {
+            padding: 0.875rem 0; 
+            font-size: 0.875rem;
+            font-family: "Rubik", sans-serif;
+            font-weight: normal;
+            line-height: 1.2;
+            color: #b0b2b3;
+            border-bottom: 2px solid #1B1D20;
+
+            @include responsive(759){
+                border-top: none;
+                margin: 0;
+
+            }
+
+            &:before {
+                content: '';
+                display: inline-block;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                border: 2px solid #0E1013;
+                background-image: linear-gradient(#DDFF01, #2e0);
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .btn {
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        background-image: linear-gradient(#9B30F9, #84e);
+        border-radius: 4px;
+        padding: 1rem;
+        line-height: 1.4;
+        font-family: "Rubik", sans-serif;
+        font-weight: normal;
+        font-size: 0.875rem;
+       
+        @include responsive(759){
+            margin: 0 !important;
+            margin-top: 10px !important;
+            border-top: none;
+        }
+
+        &:hover {
+            color: #fff !important;
+            transform: scale(1.1);
+        }
+
+        &:after {
+            content: "►";
+            font-size: 0.625rem;
+            margin-left: 3rem;
+            vertical-align: middle;
+
+            @include responsive(759){
+                position: relative;
+                margin-left: 5rem;
+            }
+        }
+
+        
+    }
+
+    p {
+        margin: 10px;
+        color: #fff;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.875rem;
+        color: #b0b2b3;
+    }
+}
+
+// animações
+@keyframes dropdown-slice {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -30px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+// Animation menu (MOBILE)
+@keyframes menu-dropDown {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(-120deg) scale(1.1);
+    }
+}

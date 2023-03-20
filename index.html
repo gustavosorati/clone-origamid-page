@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&family=Rubik:ital,wght@0,300;0,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo/css/geral.css">
+
+
+    <title>Origamid - Minha conta</title>
+</head>
+
+<body>
+    <div class="grid-container">
+        <header class="header-navegacao">
+            <div class="container container-menu">
+                <div class="logo">
+                    <p>ORI<span>G</span><span class="logo-eff">AMID</span></p>
+                </div>
+
+                <nav class="navigation">
+                    <a class="btn-menu-mobile" data-modal="btn-menu" aria-label="Abrir Menu"></a> <!-- aparecer menu -->
+
+                    <ul class="menu">
+                        <li class="submenu-item">
+                            <!-- sub menu -->
+                            <a href="#" class="cursos" data-modal="act-dropdown">Cursos</a>
+                            <ul class="submenu dropdown" data-modal="dropdown">
+                                <li><a href="#">Web Design Completo</a></li>
+                                <li><a href="#">Javascript Completo ES6+</a></li>
+                                <li><a href="#">WordPress como CMS</a></li>
+                                <li><a href="#">WooCommerce como CMS</a></li>
+                                <li><a href="#">UI Design Avançado</a></li>
+                                <li><a href="#">Vue.js Completo</a></li>
+                                <a href="#" class="btn">Lista Completa</a>
+                                <p>17 cursos | 850 aulas</p>
+                            </ul>
+                        </li>
+                        <li><a href="#">Inscreva-se</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#" class="active">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header><!-- fim menu -->
+
+        <article>
+            <div class="wrapper-title">
+                <h1>Login / Registro</h1>
+            </div>
+
+            <div class="content-form">
+                <div class="container formulario">
+                    <div class="login">
+                        <h2>Entrar</h2>
+                        <form action="" method="post">
+                            <p>
+                                <label for="username">Nome de usuário ou e-mail*</label>
+                                <input type="text" name="username">
+                            </p>
+                            <p>
+                                <label for="password">Senha *</label>
+                                <input type="password" name="password">
+                            </p>
+
+                            <p>
+                                <label class="checkbox">
+                                    <input type="checkbox" id="check"><span>Lembre-me</span>
+                                </label>
+                                <button type="submit">Acessar</button>
+                            </p>
+
+                            <p class="perdeu-senha">
+                                <a href="#">Perdeu sua senha?</a>
+                            </p>
+                        </form>
+                    </div>
+
+                    <div class="login-create">
+                        <h2>Registre-se</h2>
+                        <p>Se você ainda não possui uma conta, escolha um plano da Origamid e preencha o cadastro.</p>
+                        <a href="#">Escolher Plano</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+
+        <footer class="footer">
+            <div>
+                <div class="container footer-info">
+                    <div class="footer-item">
+                        <h3>Números</h3>
+                        <ul class="specs">
+                            <li>
+                                <a href="#">
+                                    <span>11.959</span>
+                                    | Alunos
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <span>49.152</span>
+                                    | Facebook
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <span>18.328</span>
+                                    | Youtube
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="footer-item">
+                        <h3>Sites</h3>
+                        <ul class="specs">
+                            <li>
+                                <a href="#">
+                                    Origamid
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    Origamid Codex
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    Origamid Books
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="footer-item">
+                        <h3>Mapa do Site</h3>
+                        <div class="footer-map">
+                            <ul class="map-itens">
+                                <li><a href="#">Home</a></li>
+
+                                <li><a href="#">Minha Conta</a></li>
+
+                                <li><a href="#">Planos</a></li>
+
+                                <li><a href="#">Cursos</a></li>
+
+                                <li><a href="#">Contato</a></li>
+
+                                <li><a href="#">Termos</a></li>
+                            </ul>
+
+
+                            <div class="redes-sociais">
+                                <ul>
+                                    <li><a href="#">contato@origamid.com</a></li>
+                                    <li><a href="#">facebook.com/origamid</a></li>
+                                    <li><a href="#">youtube.com/origamid</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- fim .footer-info -->
+        </footer>
+
+        <div class="copy">
+            <div class="container">
+                <p>Origamid © 2012 - 2020. Alguns direitos reservados. CNPJ: 23.811.568/0001-98</p>
+                <p>Rua Lauro Müller, 116, 32º andar, sala 3201 - Botafogo - Rio de Janeiro - RJ - 22290-160.</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./scripts/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+@mixin responsive($dispositivo) {
+    @if ($dispositivo == 759){
+        @media only screen and (max-width: 759px) {
+            @content;
+        }
+    }
+}

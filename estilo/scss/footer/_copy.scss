@@ -1,0 +1,17 @@
+.copy {
+    background-image: linear-gradient(#9B30F9, #84e);
+    padding: 1.875rem 0;
+    color: #ffffff;
+    
+    p {
+        font-family: 'IBM Plex Mono', monospace;
+        font-style: italic;
+        line-height: 1.666;
+        font-size: 0.875rem;
+        
+        @include responsive(759){
+            text-align: center;
+            padding: 0 10px;
+        }
+    }
+}

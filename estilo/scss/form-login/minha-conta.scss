@@ -1,0 +1,175 @@
+.wrapper-title {
+    padding: 35px;
+    background-color: #131518;
+    color: #fff;
+
+    h1 {
+        text-align: center;
+        font-family: 'Rubik', sans-serif;
+        font-weight: 400;
+        font-size: 2.25rem;
+
+    }
+}
+
+.content-form {
+    background: #282A2D;
+    color: #ffffff;
+    font-family: 'Rubik', sans-serif;
+
+    padding: 60px;
+
+    h2 {
+        font-weight: 400;
+        margin-bottom: 40px;
+
+        &:before {
+            content: '';
+            width: 30px;
+            height: 3px;
+            display: block;
+            margin-bottom: 0.625rem;
+            background: #fff;
+            font-size: 1rem;
+        }
+    }
+
+    .formulario {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        @include responsive(759){
+            grid-template-columns: 1fr;
+            max-width: 500px;
+        }
+
+        .login {
+            padding-right: 40px;
+            position: relative;
+
+            @include responsive(759){
+                padding: 0;
+
+            }
+
+            p {
+                margin-bottom: 20px;
+
+                label,
+                input {
+                    display: block;
+                }
+
+                label {
+                    margin-bottom: 0.625rem;
+                    color: #b0b2b3;
+                }
+
+                input[type="text"], input[type="password"] {
+                    width: 90%;
+
+                    padding: 10px;
+                    border: 2px solid #131518;
+                    border-radius: 4px;
+                    transition: .4s;
+                    font-size: 1rem;
+                    font-family: "Rubik", sans-serif;
+                    font-weight: normal;
+
+                    @include responsive(759){
+                        width: 100%;
+                        // width: calc(100% - 22px);
+                        // max-width: 95%;
+                        display: inline-flex;
+        
+                    }
+
+                    &:hover {
+                        border-color: #fff;
+                    }
+                }
+
+            }
+
+            .checkbox {
+                display: flex;
+                text-align: start;
+
+                input {
+                    display: inline-block;
+                    margin-right: 8px;
+                }
+            }
+
+            button[type="submit"] {
+                background: linear-gradient(#9B30F9, #84e);
+                border: none;
+                border-radius: 4px;
+                color: #fff;
+                font-family: "Rubik", sans-serif;
+                font-size: 1rem;
+                padding: 15px 40px;
+                letter-spacing: 1px;
+                cursor: pointer;
+
+                &:hover {
+                    background: #0E1013;
+                }
+            }
+
+            .perdeu-senha {
+                position: absolute;
+                top: 255px;
+                right: 120px;
+
+                @include responsive(759) {
+                    position: initial;
+                    
+                }
+
+                a {
+                    color: #AA88FF;
+                    letter-spacing: 1px;
+                    font-size: 1rem;
+                    font-family: "Rubik", sans-serif;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.login-create {
+    h2 {
+        margin-bottom: 40px;
+    }
+
+    p {
+        max-width: 400px;
+        line-height: 1.4;
+        margin-bottom: 20px;
+    }
+
+    a {
+        display: inline-block;
+        padding: 15px;
+        border-radius: 4px;
+        background: linear-gradient(#9B30F9, #84e);
+        color: #fff;
+        font-family: 1.125rem;
+        transition: .3s;
+
+        &:after {
+            content: '►';
+            margin-left: 30px;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+            transition: .3s;
+        }
+    }
+}
